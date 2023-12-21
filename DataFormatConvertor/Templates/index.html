@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Format Converter</title>
+</head>
+<body>
+    <h1>Data Format Converter</h1>
+    <form action="/convert" method="post">
+        <label for="data">Input Data:</label>
+        <textarea name="data" id="data" rows="5" cols="50">{{ original_data or '' }}</textarea>
+        <br>
+        <label for="input_format">Input Format:</label>
+        <select name="input_format" id="input_format">
+            <option value="json" {% if input_format == 'json' %}selected{% endif %}>JSON</option>
+            <option value="xml" {% if input_format == 'xml' %}selected{% endif %}>XML</option>
+        </select>
+        <br>
+        <label for="output_format">Output Format:</label>
+        <select name="output_format" id="output_format">
+            <option value="json" {% if output_format == 'json' %}selected{% endif %}>JSON</option>
+            <option value="xml" {% if output_format == 'xml' %}selected{% endif %}>XML</option>
+        </select>
+        <br>
+        <button type="submit">Convert</button>
+    </form>
+
+    {% if result %}
+        <h2>Result:</h2>
+        <pre>{{ result }}</pre>
+    {% endif %}
+
+    {% if error %}
+        <h2>Error:</h2>
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,1 @@
+- A remote desktop application that allows users to control a computer over a network. Implement features like screen sharing, keyboard, and mouse control.

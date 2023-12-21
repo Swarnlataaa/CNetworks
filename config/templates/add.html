@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Configuration</title>
+</head>
+<body>
+    <h1>Add Configuration</h1>
+    <form action="{{ url_for('add_configuration') }}" method="POST">
+        <label for="device_name">Device Name:</label>
+        <input type="text" name="device_name" required><br>
+        <label for="config_text">Configuration Text:</label>
+        <textarea name="config_text" rows="4" required></textarea><br>
+        <button type="submit">Add Configuration</button>
+    </form>
+</body>
+</html>
